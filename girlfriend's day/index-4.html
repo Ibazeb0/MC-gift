@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Girlfriend's Day MC ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #ffe6f0);
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      color: #2c2c2c;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #ff4d6d;
+      animation: popIn 1s ease-out forwards;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .typewriter {
+      margin: 2rem 0;
+      background: #fff0f5;
+      padding: 1rem;
+      border-radius: 20px;
+      box-shadow: 4px 4px 0 #2c2c2c;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: left;
+      position: relative;
+    }
+
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .photos img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 2px 2px 0 #2c2c2c;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+
+    .question-section {
+      margin-top: 3rem;
+    }
+
+    input[type="text"] {
+      padding: 0.6rem;
+      border-radius: 10px;
+      border: 2px solid #ff4d6d;
+      margin-right: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e03e59;
+    }
+
+    .audio-section {
+      display: none;
+      margin-top: 2rem;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .typewriter {
+        font-size: 1rem;
+      }
+      .photos img {
+        width: 80px;
+        height: 80px;
+      }
+      input[type="text"] {
+        width: 100%;
+        margin: 0 0 1rem 0;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Girlfriend's Day Baby ❤️</h1>
+    <div class="typewriter" id="messageBox"></div>
+
+    <div class="photos">
+      <img src="images/IMG_2572.jpg" alt="Memory 1">
+      <img src="images/IMG_3238.JPG" alt="Memory 2">
+      <img src="images/IMG_3537.JPG" alt="Memory 3">
+      <img src="images/IMG_4878.jpg" alt="Memory 4">
+    </div>
+
+    <p>Here's to more memories of us 🥂</p>
+
+    <div class="question-section">
+      <h2>Now a little challenge 😏</h2>
+      <p>What is my favourite picture of you?</p>
+      <input type="text" id="answer" placeholder="Your answer here...">
+      <button onclick="checkAnswer()">Submit</button>
+    </div>
+
+    <div class="audio-section" id="audioSection">
+      <p>🎁 You got it right! Here’s your surprise:</p>
+      <audio controls>
+        <source src="audio/Girlfriends day audio.m4a" type="audio/mp4">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    const message = `Happy Girlfriend's Day Baby, I'm so happy to call you mine. I love you so much MC. You bring out this inner child in me, you make me want to be better. You also make me a down bad weirdo for you—which is only cool when I do it; it's cringe when others do it 😌. I'm not so mysterious or nonchalant as I think I am. You're the Catwoman to my Batman.
+
+I just wanted to remind you that you are loved—365/365 days. I know you're tired of hearing these things, but I’ll keep saying it.
+
+You're a very beautiful woman, baby. You're smart, bold, courageous, quirky, fun, creative, talented, gorgeous, sexy, curvy, very funny, strong, my abuser (I know it’s out of love), Miss Sunshine, Miss Standing On Business. You're so special that they didn’t just name you Grace—they had to add Great to it. MC energy right there. Superstar, queen, supermodel, an angel, God-sent.
+
+I love your eyes, I love your lips, your smile, your laughs (especially those giggles), your "broad" shoulders, your ears, your hip dips, your thick thighs, your dimples, your cute little birthmark on your shoulder, your scars (they’re really gorgeous). I know it’s weird, but that’s my way of giving compliments—because you're special and should be treated as such.
+
+I'm all in baby. I fell in love with everything about you—flaws, sins, and the good parts too.`;
+
+    let index = 0;
+    function typeWriter() {
+      if (index < message.length) {
+        document.getElementById("messageBox").innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeWriter, 25);
+      }
+    }
+
+    window.onload = typeWriter;
+
+    function checkAnswer() {
+      const correctAnswers = ["all of them", "i don't have a favourite", "i love all", "i’m too greedy i love all"];
+      const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+      if (correctAnswers.some(ans => userAnswer.includes(ans))) {
+        document.getElementById("audioSection").style.display = "block";
+      } else {
+        alert("Hmm try again MC 😏");
+      }
+    }
+  </script>
+</body>
+</html>
